@@ -4,12 +4,12 @@
 window.DJF_EVENTS = [
   {
     month: "SEP",
-    day: "THIS WEEKEND",
+    day: "12",
     region: "HEALING REVIVAL",
     city: "Washington",
     state: "D.C.",
     venue: "Washington, D.C.",
-    details: "September 2026",
+    details: "September 12, 2026",
     url: ""
   },
   {
