@@ -324,6 +324,20 @@
             <span class="book-pill">New Book Announcement</span>
             <a class="button button-secondary" href="#connect">Ask About the Book</a>
           </div>
+
+          <form class="book-notify-form" name="healed-book-notify" method="POST" data-netlify="true" action="/thank-you.html">
+            <input type="hidden" name="form-name" value="healed-book-notify">
+            <input type="hidden" name="interest" value="Healed Is Who You Are book notification">
+            <div class="book-notify-copy">
+              <strong>Be notified when the book is available.</strong>
+              <span>Leave your name and email and we'll let you know when <em>Healed Is Who You Are</em> is ready for purchase.</span>
+            </div>
+            <div class="book-notify-fields">
+              <input type="text" name="name" placeholder="Name" aria-label="Name" required>
+              <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+              <button class="button button-primary" type="submit">Notify Me</button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
