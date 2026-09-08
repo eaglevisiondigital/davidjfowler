@@ -85,3 +85,22 @@ PORTRAIT UPDATE
 ---------------
 The supplied professional portrait has been added to the homepage hero and copied to:
 assets/dave-fowler-portrait.jpeg
+
+
+JAN 2027 BOOK ANNOUNCEMENT
+--------------------------
+Added a featured release section for:
+Healed Is Who You Are
+by David J. Fowler
+
+The site now includes the generated mockup image at:
+assets/healed-is-who-you-are-book-mockup.png
+
+CARD REFINEMENT PASS
+--------------------
+A subtle premium refinement pass was also added to the ministry cards and
+business ecosystem cards:
+- better hover polish
+- more brand-specific ambient accents
+- refined dividers and border treatment
+- more presentation value without turning the site into an advertisement
