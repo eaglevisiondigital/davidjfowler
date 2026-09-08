@@ -104,3 +104,10 @@ business ecosystem cards:
 - more brand-specific ambient accents
 - refined dividers and border treatment
 - more presentation value without turning the site into an advertisement
+
+
+PORTRAIT REFINEMENT
+-------------------
+Adjusted the homepage portrait presentation to crop out the visible white edges
+from the headshot and added a cleaner, more professional frame treatment.
+This was done with HTML/CSS only by scaling and framing the existing image.
