@@ -1,14 +1,11 @@
-name: Build social sharing preview
+name: Publish approved social preview
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/social-preview.yml'
-      - 'scripts/build_social_preview.py'
-      - 'assets/dave-fowler-portrait.jpeg'
-      - 'assets/djf-monogram.png'
+      - 'assets/david-j-fowler-social-approved-v19.jpg'
 
 permissions:
   contents: write
@@ -18,31 +15,33 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-preview:
+  connect-approved-preview:
+    if: github.repository == 'eaglevisiondigital/davidjfowler' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
+          repository: eaglevisiondigital/davidjfowler
           ref: main
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install image renderer
-        run: |
-          python -m pip install --disable-pip-version-check Pillow==11.3.0
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-dejavu-core
-      - name: Render approved brand assets and connect sharing metadata
-        run: python scripts/build_social_preview.py
-      - name: Commit generated preview and metadata
+      - name: Connect approved static image without rendering or fonts
+        run: python3 scripts/build_social_preview.py
+      - name: Validate thumbnail and homepage metadata
+        run: python3 scripts/build_social_preview.py --check
+      - name: Commit homepage metadata only
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/david-j-fowler-social-preview-v19.jpg assets/david-j-fowler-social-preview-v19.png index.html
+          git add -- index.html
           if git diff --cached --quiet; then
-            echo 'Sharing preview is already current.'
+            echo 'Approved thumbnail is already connected.'
           else
-            git commit -m 'Publish approved David J. Fowler social sharing preview'
+            git commit -m 'Connect exact approved social image for DavidJFowler.com only'
             git push origin HEAD:main
           fi
+      - name: Report exact scope
+        run: |
+          echo '### DavidJFowler.com social metadata connected' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Uses the uploaded approved image without changing any image pixels.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Only index.html in eaglevisiondigital/davidjfowler can be modified. No other domains or repositories are touched.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'This confirms repository metadata, not the downstream hosting deployment or cached social previews.' >> "$GITHUB_STEP_SUMMARY"
