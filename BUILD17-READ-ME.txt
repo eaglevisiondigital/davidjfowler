@@ -1,0 +1,49 @@
+BUILD 17 — DUSTIN COURAGEOUS FEATURE
+
+BASELINE
+Built from DavidJFowler-com-site-updated-v16.zip. All existing file blob hashes
+match the current eaglevisiondigital/davidjfowler main tree read for this update
+(tree 69b35800838947f6664bb78faedb87cf2906fe61).
+
+CHANGE
+Added #dustin-courageous after Business & Creative Ecosystem and before the
+existing Healed Is Who You Are section. Both book features are reached by the
+updated “Books & Kids” navigation link. Original Dustin ecosystem card and its
+direct website link are unchanged.
+
+EXACT ARTWORK
+Both supplied JPEG graphics are copied byte-for-byte to /assets. No redraw,
+recolor, crop, generated replacement shield, or cover edits. Responsive image
+display preserves their full aspect ratio.
+
+LINKS
+Explore website: https://dustincourageous.com
+Book graphic / launch-list button: https://dustincourageous.com/#launch-list
+Resources graphic / button: https://dustincourageous.com/parents
+The launch-list anchor and /parents route were verified in the Dustin repository.
+No signup data is collected by this new section; signup remains on the Dustin site.
+
+SOURCE OF RELEASE DATE
+September 30, 2026 follows Dave's newly supplied Book #1 release graphic.
+The separate Dustin website repository still contains older August 31 Book #1
+references. Those files were NOT changed by this DavidJFowler.com update.
+
+PUBLISH
+This is a complete static website package. Extract it, then upload/replace the
+site files in the existing DavidJFowler.com GitHub/hosting project, preserving
+the /assets directory. No build step is needed for this package.
+This package has not been pushed to GitHub or deployed to the live site.
+
+CHECK AFTER PUBLISHING
+Open #dustin-courageous on desktop and mobile, check both images are visible,
+and click the website, launch-list, and free-resource links.
+
+Existing ministry copy, partnership destination, schedule, contact and book
+notification forms, portrait, monogram, and v16 mobile styles are retained.
+
+QA COMPLETED
+Rendered in Chromium at viewport widths 320, 375, 390, 430, 700, 760, 768,
+1024, 1100, 1280 and 1440 pixels. Both images loaded, no new feature overflow,
+no JavaScript errors, desktop navigation does not overlap the contact CTA,
+and feature button tap areas are at least 44 pixels high. Desktop and mobile
+section screenshots were reviewed. Existing forms are byte-for-byte unchanged.
